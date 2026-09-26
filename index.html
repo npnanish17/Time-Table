@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Weekly Timetable</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-family: "Segoe UI", Arial, sans-serif;
+
+      background:
+        radial-gradient(circle at top left, #3b82f6 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #8b5cf6 0%, transparent 35%),
+        #0f172a;
+
+      color: white;
+      padding: 30px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      padding: 45px;
+
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+
+      border-radius: 25px;
+
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+
+      box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .title h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+
+      background: linear-gradient(
+        90deg,
+        #60a5fa,
+        #c084fc,
+        #f472b6
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .title p {
+      color: #cbd5e1;
+      font-size: 1rem;
+    }
+
+    .days {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .day {
+      position: relative;
+      overflow: hidden;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 150px;
+
+      text-decoration: none;
+      color: white;
+
+      border-radius: 18px;
+
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.15),
+        rgba(255,255,255,0.05)
+      );
+
+      border: 1px solid rgba(255,255,255,0.15);
+
+      box-shadow:
+        0 10px 25px rgba(0,0,0,0.2);
+
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+    }
+
+    /* Shine effect */
+    .day::before {
+      content: "";
+      position: absolute;
+
+      width: 150%;
+      height: 100%;
+
+      top: -100%;
+      left: -120%;
+
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+      );
+
+      transform: rotate(20deg);
+
+      transition: 0.6s;
+    }
+
+    .day:hover::before {
+      left: 120%;
+      top: 100%;
+    }
+
+    .day:hover {
+      transform: translateY(-10px) scale(1.03);
+
+      background: linear-gradient(
+        145deg,
+        rgba(59,130,246,0.35),
+        rgba(139,92,246,0.3)
+      );
+
+      box-shadow:
+        0 20px 40px rgba(0,0,0,0.4),
+        0 0 25px rgba(96,165,250,0.25);
+    }
+
+    .icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+
+      transition: transform 0.35s ease;
+    }
+
+    .day:hover .icon {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    .day-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .day-number {
+      margin-top: 5px;
+      font-size: 0.75rem;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Different colors for each day */
+
+    .monday:hover {
+      box-shadow: 0 20px 40px rgba(59,130,246,0.35);
+    }
+
+    .tuesday:hover {
+      box-shadow: 0 20px 40px rgba(16,185,129,0.35);
+    }
+
+    .wednesday:hover {
+      box-shadow: 0 20px 40px rgba(245,158,11,0.35);
+    }
+
+    .thursday:hover {
+      box-shadow: 0 20px 40px rgba(239,68,68,0.35);
+    }
+
+    .friday:hover {
+      box-shadow: 0 20px 40px rgba(168,85,247,0.35);
+    }
+
+    /* Mobile */
+
+    @media (max-width: 750px) {
+      .days {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .container {
+        padding: 30px 20px;
+      }
+
+      .title h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .days {
+        grid-template-columns: 1fr;
+      }
+
+      .day {
+        min-height: 120px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="title">
+      <h1>Weekly Timetable</h1>
+      <p>Select a day to view the timetable</p>
+    </div>
+
+    <div class="days">
+
+      <a href="monday.html" class="day monday">
+        <div class="icon">☢️</div>
+        <div class="day-name">MONDAY</div>
+        <div class="day-number">Day 01</div>
+      </a>
+
+      <a href="tuesday.html" class="day tuesday">
+        <div class="icon">📚</div>
+        <div class="day-name">TUESDAY</div>
+        <div class="day-number">Day 02</div>
+      </a>
+
+      <a href="wednesday.html" class="day wednesday">
+        <div class="icon">💻</div>
+        <div class="day-name">WEDNESDAY</div>
+        <div class="day-number">Day 03</div>
+      </a>
+
+      <a href="thursday.html" class="day thursday">
+        <div class="icon">🧪</div>
+        <div class="day-name">THURSDAY</div>
+        <div class="day-number">Day 04</div>
+      </a>
+
+      <a href="friday.html" class="day friday">
+        <div class="icon">🎓</div>
+        <div class="day-name">FRIDAY</div>
+        <div class="day-number">Day 05</div>
+      </a>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

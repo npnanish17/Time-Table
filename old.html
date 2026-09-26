@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Timetable</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6f9;
+      padding: 30px 15px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1f2937;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 8px;
+      background: #ffffff;
+      min-width: 800px;
+    }
+
+    th,
+    td {
+      border: 1px solid #dfe3e8;
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+    }
+
+    thead th {
+      background: #2c3e50;
+      color: #ffffff;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    tbody tr td:first-child {
+      background: #34495e;
+      color: #ffffff;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    tbody tr:hover {
+      background: #eef2f7;
+    }
+
+    td.lunch {
+      background: #ffe8a1 !important;
+      color: #7a5a00;
+      font-weight: 600;
+    }
+
+    td.lab {
+      background: #d6eaf8;
+      color: #030bf6;
+      font-weight: 600;
+    }
+
+    .time-row td {
+      background: #ecf0f1;
+      color: #555;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .friday-time td {
+      background: #ecf0f1;
+      color: #34495e;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 10px 8px;
+    }
+
+    /* Move subject text toward the bottom */
+    .subject {
+      position: relative;
+      top: 35px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1> Timetable</h1>
+
+  <div class="table-wrapper">
+    <table>
+
+      <thead>
+        <tr>
+          <th></th>
+          <th>9:30 - 10:10</th>
+          <th>10:10 - 10:50</th>
+          <th>11:00 - 11:40</th>
+          <th>11:40 - 12:20</th>
+          <th>12:20 - 1:00</th>
+          <th>1:00 - 1:40</th>
+          <th>1:40 - 2:20</th>
+          <th>2:30 - 3:10</th>
+          <th>3:10 - 3:50</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <!-- MONDAY -->
+        <tr>
+          <td>MON</td>
+
+          <td style="background-image:url(pl.png); background-size:cover; background-position:center;">
+            <span class="subject">PL(ENG)</span>
+          </td>
+
+          <td style="background-image:url(js.png); background-size:cover; background-position:center;">
+            <span class="subject">JS(COM)</span>
+          </td>
+
+          <td class="lab" colspan="2"
+              style="background-image:url(phy.png); background-size:cover; background-position:center;">
+            <span class="subject">PHYSICS LAB</span>
+          </td>
+
+          <td class="lunch">LUNCH BREAK</td>
+
+          <td style="background-image:url(kgt.png); background-size:cover; background-position:center;">
+            <span class="subject">KGT(PHY)</span>
+          </td>
+
+          <td style="background-image:url(rt.png); background-size:cover; background-position:center;">
+            <span class="subject">RT(PHY)</span>
+          </td>
+
+          <td style="background-image:url(ams.png); background-size:cover; background-position:center;">
+            <span class="subject">AMS(MATH)</span>
+          </td>
+
+          <td style="background-image:url(ja.png); background-size:cover; background-position:center;">
+            <span class="subject">JA(NEP)</span>
+          </td>
+        </tr>
+
+        <!-- TUESDAY -->
+        <tr>
+          <td>TUE</td>
+
+          <td style="background-image:url(ac.png); background-size:cover; background-position:center;">
+            <span class="subject">AC(NEP)</span>
+          </td>
+
+          <td style="background-image:url(da.png); background-size:cover; background-position:center;">
+            <span class="subject">DA(CHEM)</span>
+          </td>
+
+          <td style="background-image:url(dpa.png); background-size:cover; background-position:center;">
+            <span class="subject">DPA(MATH)</span>
+          </td>
+
+          <td style="background-image:url(dp.png); background-size:cover; background-position:center;">
+            <span class="subject">DP(CHEM)</span>
+          </td>
+
+          <td class="lunch">LUNCH BREAK</td>
+
+          <td style="background-image:url(js.png); background-size:cover; background-position:center;">
+            <span class="subject">JS(COM)</span>
+          </td>
+
+          <td style="background-image:url(pl.png); background-size:cover; background-position:center;">
+            <span class="subject">PL(ENG)</span>
+          </td>
+
+          <td style="background-image:url(ua.png); background-size:cover; background-position:center;">
+            <span class="subject">UA(PHY)</span>
+          </td>
+
+          <td style="background-image:url(pk.png); background-size:cover; background-position:center;">
+            <span class="subject">PK(MATH)</span>
+          </td>
+        </tr>
+
+        <!-- WEDNESDAY -->
+        <tr>
+          <td>WED</td>
+
+          <td style="background-image:url(ac.png); background-size:cover; background-position:center;">
+            <span class="subject">AC(NEP)</span>
+          </td>
+
+          <td style="background-image:url(da.png); background-size:cover; background-position:center;">
+            <span class="subject">DA(CHEM)</span>
+          </td>
+
+          <td class="lab" colspan="2"
+              style="background-image:url(comp.png); background-size:cover; background-position:center;">
+            <span class="subject">COMPUTER LAB</span>
+          </td>
+
+          <td class="lunch">LUNCH BREAK</td>
+
+          <td style="background-image:url(pk.png); background-size:cover; background-position:center;">
+            <span class="subject">PK(MATH)</span>
+          </td>
+
+          <td style="background-image:url(dp.png); background-size:cover; background-position:center;">
+            <span class="subject">DP(CHEM)</span>
+          </td>
+
+          <td style="background-image:url(ua.png); background-size:cover; background-position:center;">
+            <span class="subject">UA(PHY)</span>
+          </td>
+
+          <td style="background-image:url(ams.png); background-size:cover; background-position:center;">
+            <span class="subject">AMS(MATH)</span>
+          </td>
+        </tr>
+
+        <!-- THURSDAY -->
+        <tr>
+          <td>THU</td>
+
+          <td style="background-image:url(dp.png); background-size:cover; background-position:center;">
+            <span class="subject">DP(CHEM)</span>
+          </td>
+
+          <td style="background-image:url(js.png); background-size:cover; background-position:center;">
+            <span class="subject">JS(COM)</span>
+          </td>
+
+          <td class="lab" colspan="2"
+              style="background-image:url(chem.png); background-size:cover; background-position:center;">
+            <span class="subject">CHEMISTRY LAB</span>
+          </td>
+
+          <td class="lunch">LUNCH BREAK</td>
+
+          <td style="background-image:url(rt.png); background-size:cover; background-position:center;">
+            <span class="subject">RT(PHY)</span>
+          </td>
+
+          <td style="background-image:url(aj.png); background-size:cover; background-position:center;">
+            <span class="subject">VALUE EDU</span>
+          </td>
+
+          <td style="background-image:url(pl.png); background-size:cover; background-position:center;">
+            <span class="subject">PL(ENG)</span>
+          </td>
+
+          <td style="background-image:url(ams.png); background-size:cover; background-position:center;">
+            <span class="subject">AMS(MATH)</span>
+          </td>
+        </tr>
+
+        <!-- SECOND TIME ROW -->
+        <tr class="friday-time">
+          <td></td>
+          <td>9:30 - 10:15</td>
+          <td>10:15 - 11:00</td>
+          <td>11:10 - 11:55</td>
+          <td>11:55 - 12:40</td>
+          <td>12:40 - 1:20</td>
+          <td>1:20 - 2:05</td>
+          <td>2:05 - 2:50</td>
+          <td>3:00 - 3:45</td>
+          <td>3:45 - 4:30</td>
+        </tr>
+
+        <!-- FRIDAY -->
+        <tr>
+          <td>FRI</td>
+
+          <td style="background-image:url(pl.png); background-size:cover; background-position:center;">
+            <span class="subject">PL(ENG)</span>
+          </td>
+
+          <td style="background-image:url(da.png); background-size:cover; background-position:center;">
+            <span class="subject">DA(CHEM)</span>
+          </td>
+
+          <td style="background-image:url(nks.png); background-size:cover; background-position:center;">
+            <span class="subject">NKS(CHEM)</span>
+          </td>
+
+          <td style="background-image:url(ua.png); background-size:cover; background-position:center;">
+            <span class="subject">UA(PHY)</span>
+          </td>
+
+          <td class="lunch">LUNCH BREAK</td>
+
+          <td style="background-image:url(kgt.png); background-size:cover; background-position:center;">
+            <span class="subject">KGT(PHY)</span>
+          </td>
+
+          <td style="background-image:url(ams.png); background-size:cover; background-position:center;">
+            <span class="subject">AMS(MATH)</span>
+          </td>
+
+          <td style="background-image:url(js.png); background-size:cover; background-position:center;">
+            <span class="subject">JS(COM)</span>
+          </td>
+
+          <td style="background-image:url(ja.png); background-size:cover; background-position:center;">
+            <span class="subject">JA(NEP)</span>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
